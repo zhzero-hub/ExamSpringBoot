@@ -7,11 +7,13 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 //选择题
 @Mapper
+@Service
 public interface MultiQuestionMapper {
     /**
      * select * from multiquestions where questionId in (

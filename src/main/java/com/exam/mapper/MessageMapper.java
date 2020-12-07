@@ -4,10 +4,12 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.Message;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Mapper
+@Service
 public interface MessageMapper {
     @Select("select id,id as temp_id,title,content,time from message order by id desc")
     @Results({

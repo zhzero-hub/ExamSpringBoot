@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
+@RequestMapping(value = "/api")
+
 public class ScoreController {
     @Autowired
     private ScoreServiceImpl scoreService;

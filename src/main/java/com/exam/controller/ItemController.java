@@ -9,13 +9,13 @@ import com.exam.serviceimpl.MultiQuestionServiceImpl;
 import com.exam.util.ApiResultHandler;
 import com.exam.vo.Item;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
+@RequestMapping(value = "/api")
 public class ItemController {
 
     @Autowired

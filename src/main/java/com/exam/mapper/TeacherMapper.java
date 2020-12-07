@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 @Mapper
+@Service
 public interface TeacherMapper {
 
     @Select("select * from teacher")

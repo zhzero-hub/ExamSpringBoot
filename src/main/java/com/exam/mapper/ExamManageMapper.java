@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 @Mapper
+@Service
 public interface ExamManageMapper {
     @Select("select * from exam_manage")
     List<ExamManage> findAll();

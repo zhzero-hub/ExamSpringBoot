@@ -6,12 +6,14 @@ import com.exam.entity.JudgeQuestion;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 //判断题
 
 @Mapper
+@Service
 public interface JudgeQuestionMapper {
 
     @Select("select * from judge_question where questionId in (select questionId from paper_manage where questionType = 3 and paperId = #{paperId})")

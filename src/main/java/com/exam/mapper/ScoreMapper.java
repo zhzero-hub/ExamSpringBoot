@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 @Mapper
+@Service
 public interface ScoreMapper {
     /**
      * @param score 添加一条成绩记录

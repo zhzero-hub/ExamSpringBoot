@@ -4,10 +4,12 @@ import com.exam.entity.PaperManage;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Mapper
+@Service
 public interface PaperMapper {
     @Select("select paperId, questionType,questionId from paper_manage")
     List<PaperManage> findAll();

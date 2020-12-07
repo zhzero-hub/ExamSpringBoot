@@ -5,12 +5,11 @@ import com.exam.entity.MultiQuestion;
 import com.exam.serviceimpl.MultiQuestionServiceImpl;
 import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
+@RequestMapping(value = "/api")
 public class MultiQuestionController {
 
     @Autowired

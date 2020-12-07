@@ -10,7 +10,10 @@ import com.exam.vo.AnswerVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
+@RequestMapping(value = "/api")
+
 public class TeacherController {
 
     private TeacherServiceImpl teacherService;
