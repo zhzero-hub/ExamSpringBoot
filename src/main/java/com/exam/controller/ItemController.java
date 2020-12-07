@@ -33,7 +33,7 @@ public class ItemController {
 
 
     @PostMapping("/item")
-    public ApiResult ItemController(@RequestBody Item item) {
+    public ApiResult item(@RequestBody Item item) {
         // 选择题
         Integer changeNumber = item.getChangeNumber();
         // 填空题

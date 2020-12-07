@@ -2,25 +2,23 @@ package com.exam.entity;
 
 import lombok.Data;
 
-@Data
-public class Teacher {
-    private Integer teacherId;
-
-    private String teacherName;
-
+public class Teacher extends User{
     private String institute;
-
-    private String sex;
-
-    private String tel;
-
-    private String email;
-
-    private String pwd;
-
-    private String cardId;
-
     private String type;
 
-    private String role;
+    public String getInstitute() {
+        return institute;
+    }
+
+    public void setInstitute(String institute) {
+        this.institute = institute;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

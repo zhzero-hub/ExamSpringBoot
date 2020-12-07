@@ -4,16 +4,18 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.ExamManage;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 @Mapper
 public interface ExamManageMapper {
     @Select("select * from exam_manage")
     List<ExamManage> findAll();
 
     @Select("select * from exam_manage")
-    IPage<ExamManage> findAll(Page page);
+    IPage<ExamManage> findAllInPage(Page<ExamManage> page);
 
     @Select("select * from exam_manage where examCode = #{examCode}")
     ExamManage findById(Integer examCode);

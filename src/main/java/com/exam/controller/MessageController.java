@@ -16,7 +16,7 @@ public class MessageController {
     private MessageServiceImpl messageService;
 
     @GetMapping("/messages/{page}/{size}")
-    public ApiResult<Message> findAll(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
+    public ApiResult findAll(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
         Page<Message> messagePage = new Page<>(page,size);
         IPage<Message> all = messageService.findAll(messagePage);
         return ApiResultHandler.buildApiResult(200,"查询所有留言",all);
@@ -30,8 +30,7 @@ public class MessageController {
 
     @DeleteMapping("/message/{id}")
     public int delete(@PathVariable("id") Integer id) {
-        int res = messageService.delete(id);
-        return res;
+        return messageService.delete(id);
     }
 
     @PostMapping("/message")

@@ -4,14 +4,16 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.Teacher;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 @Mapper
 public interface TeacherMapper {
 
     @Select("select * from teacher")
-    IPage<Teacher>  findAll(Page page);
+    IPage<Teacher> findAllInPage(Page<Teacher> page);
 
     @Select("select * from teacher")
     public List<Teacher> findAll();

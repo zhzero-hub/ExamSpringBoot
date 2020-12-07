@@ -7,9 +7,11 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 @Mapper
 public interface ScoreMapper {
     /**
@@ -25,7 +27,7 @@ public interface ScoreMapper {
 
     // 分页
     @Select("select scoreId,examCode,studentId,subject,ptScore,etScore,score,answerDate from score where studentId = #{studentId} order by scoreId desc")
-    IPage<Score> findById(Page<?> page, Integer studentId);
+    IPage<Score> findByIdInPage(Page<?> page, Integer studentId);
 
     // 不分页
     @Select("select scoreId,examCode,studentId,subject,ptScore,etScore,score,answerDate from score where studentId = #{studentId}")

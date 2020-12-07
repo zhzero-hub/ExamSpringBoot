@@ -12,7 +12,7 @@ public interface LoginService {
      * @param password 密码
      * @return 验证成功时返回用户信息，失败返回null
      */
-    public Admin adminLogin(Integer username, String password);
+    Admin adminLogin(Integer username, String password);
 
     /**
      * 教室登录
@@ -20,7 +20,7 @@ public interface LoginService {
      * @param password 密码
      * @return 验证成功时返回用户信息，失败返回null
      */
-    public Teacher teacherLogin(Integer username, String password);
+    Teacher teacherLogin(Integer username, String password);
 
     /**
      * 学生登录
@@ -28,5 +28,5 @@ public interface LoginService {
      * @param password 密码
      * @return 验证成功时返回用户信息，失败返回null
      */
-    public Student studentLogin(Integer username, String password);
+    Student studentLogin(Integer username, String password);
 }

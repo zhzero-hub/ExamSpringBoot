@@ -5,8 +5,10 @@ import com.exam.entity.Student;
 import com.exam.entity.Teacher;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Service;
 
 @Mapper
+@Service
 public interface LoginMapper {
 
     @Select("select adminId,adminName,sex,tel,email,cardId,role from admin where adminId = #{username} and pwd = #{password}")

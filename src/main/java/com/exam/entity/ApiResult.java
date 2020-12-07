@@ -1,7 +1,7 @@
 package com.exam.entity;
 
 
-public class ApiResult<T> {
+public class ApiResult {
     /**
      * 错误码，表示一种错误类型
      * 请求成功，状态码为200
@@ -16,12 +16,12 @@ public class ApiResult<T> {
     /**
      * 返回的结果包装在value中，value可以是单个对象
      */
-    private T data;
+    private Object data;
 
     public ApiResult() {
     }
 
-    public ApiResult(int code, String message, T data) {
+    public ApiResult(int code, String message, Object data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -43,11 +43,11 @@ public class ApiResult<T> {
         this.message = message;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

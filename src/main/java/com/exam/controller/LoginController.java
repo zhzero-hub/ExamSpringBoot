@@ -1,7 +1,6 @@
 package com.exam.controller;
 
 import com.exam.entity.*;
-import com.exam.service.LoginService;
 import com.exam.serviceimpl.LoginServiceImpl;
 import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     @Autowired
-    private LoginServiceImpl loginService = new LoginServiceImpl();
+    private LoginServiceImpl loginService;
 
     @PostMapping("/login")
     public ApiResult login(@RequestBody Login login) {

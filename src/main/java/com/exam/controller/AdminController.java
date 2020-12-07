@@ -5,19 +5,19 @@ import com.exam.entity.ApiResult;
 import com.exam.serviceimpl.AdminServiceImpl;
 import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Z_HAO
  */
+@CrossOrigin
 @RestController
+@RequestMapping(value = "/api")
 public class AdminController {
 
-    private AdminServiceImpl adminService;
     @Autowired
-    public AdminController(AdminServiceImpl adminService){
-        this.adminService = adminService;
-    }
+    private AdminServiceImpl adminService;
 
     @GetMapping("/admins")
     public ApiResult findAll(){

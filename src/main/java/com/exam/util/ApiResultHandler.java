@@ -5,7 +5,7 @@ import com.exam.entity.ApiResult;
 /**
  * @author Z_HAO
  */
-public class ApiResultHandler<T> {
+public class ApiResultHandler {
 
     public static ApiResult success(Object object) {
         ApiResult apiResult = new ApiResult();
@@ -19,9 +19,8 @@ public class ApiResultHandler<T> {
         return success(null);
     }
 
-    public static <T> ApiResult buildApiResult(Integer code, String message, T data) {
+    public static ApiResult buildApiResult(Integer code, String message, Object data) {
         ApiResult apiResult = new ApiResult();
-
 
         apiResult.setCode(code);
         apiResult.setMessage(message);

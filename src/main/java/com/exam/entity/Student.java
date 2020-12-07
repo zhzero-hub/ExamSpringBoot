@@ -1,44 +1,25 @@
 package com.exam.entity;
 
-public class Student {
-    private Integer studentId;
-
-    private String studentName;
-
+public class Student extends User{
     private String grade;
-
     private String major;
-
     private String clazz;
-
     private String institute;
 
-    private String tel;
-
-    private String email;
-
-    private String pwd;
-
-    private String cardId;
-
-    private String sex;
-
-    private String role;
-
     public Integer getStudentId() {
-        return studentId;
+        return getUserId();
     }
 
     public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
+        setUserId(studentId);
     }
 
     public String getStudentName() {
-        return studentName;
+        return getName();
     }
 
     public void setStudentName(String studentName) {
-        this.studentName = studentName == null ? null : studentName.trim();
+        setName(studentName);
     }
 
     public String getGrade() {
@@ -73,51 +54,4 @@ public class Student {
         this.institute = institute == null ? null : institute.trim();
     }
 
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel == null ? null : tel.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd == null ? null : pwd.trim();
-    }
-
-    public String getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(String cardId) {
-        this.cardId = cardId == null ? null : cardId.trim();
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role == null ? null : role.trim();
-    }
 }
