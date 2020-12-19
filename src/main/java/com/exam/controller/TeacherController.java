@@ -16,17 +16,19 @@ import org.springframework.web.bind.annotation.*;
 
 public class TeacherController {
 
-    private TeacherServiceImpl teacherService;
     @Autowired
-    public TeacherController(TeacherServiceImpl teacherService){
-        this.teacherService = teacherService;
+    private TeacherServiceImpl teacherService;
+
+    @GetMapping("/teachers")
+    public ApiResult findAll(){
+        System.out.println("查询全部");
+        return ApiResultHandler.success(teacherService.findAll());
     }
 
     @GetMapping("/teachers/{page}/{size}")
     public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size){
         Page<Teacher> teacherPage = new Page<>(page,size);
         IPage<Teacher> teacherIPage = teacherService.findAll(teacherPage);
-
         return ApiResultHandler.buildApiResult(200,"查询所有教师",teacherIPage);
     }
 

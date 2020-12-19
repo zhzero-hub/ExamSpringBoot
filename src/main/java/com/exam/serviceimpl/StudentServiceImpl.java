@@ -15,10 +15,14 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
+    @Override
+    public List<Student> findAll() {
+        return studentMapper.findAll();
+    }
 
     @Override
     public IPage<Student> findAll(Page<Student> page) {
-        return studentMapper.findAll(page);
+        return studentMapper.findAllInPage(page);
     }
 
     @Override
@@ -29,6 +33,16 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public int deleteById(Integer studentId) {
         return studentMapper.deleteById(studentId);
+    }
+
+    @Override
+    public Student findByNumber(String number) {
+        return studentMapper.findByNumber(number);
+    }
+
+    @Override
+    public int deleteByNumber(String number) {
+        return studentMapper.deleteByNumber(number);
     }
 
     @Override

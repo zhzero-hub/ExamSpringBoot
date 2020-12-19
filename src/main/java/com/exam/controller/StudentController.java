@@ -18,6 +18,12 @@ public class StudentController {
     @Autowired
     private StudentServiceImpl studentService;
 
+    @GetMapping("/students")
+    public ApiResult findAll(){
+        System.out.println("查询全部");
+        return ApiResultHandler.success(studentService.findAll());
+    }
+
     @GetMapping("/students/{page}/{size}")
     public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size) {
         Page<Student> studentPage = new Page<>(page,size);
@@ -25,9 +31,9 @@ public class StudentController {
         return  ApiResultHandler.buildApiResult(200,"分页查询所有学生",res);
     }
 
-    @GetMapping("/student/{studentId}")
-    public ApiResult findById(@PathVariable("studentId") Integer studentId) {
-        Student res = studentService.findById(studentId);
+    @GetMapping("/student/{studentNumber}")
+    public ApiResult findById(@PathVariable("studentNumber") String studentNumber) {
+        Student res = studentService.findByNumber(studentNumber);
         if (res != null) {
         return ApiResultHandler.buildApiResult(200,"请求成功",res);
         } else {
@@ -35,9 +41,9 @@ public class StudentController {
         }
     }
 
-    @DeleteMapping("/student/{studentId}")
-    public ApiResult deleteById(@PathVariable("studentId") Integer studentId) {
-        return ApiResultHandler.buildApiResult(200,"删除成功",studentService.deleteById(studentId));
+    @DeleteMapping("/student/{studentNumber}")
+    public ApiResult deleteById(@PathVariable("studentNumber") String studentNumber) {
+        return ApiResultHandler.buildApiResult(200,"删除成功",studentService.deleteByNumber(studentNumber));
     }
 
     @PutMapping("/studentPWD")

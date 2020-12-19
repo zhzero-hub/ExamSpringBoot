@@ -8,14 +8,21 @@ import java.util.List;
 
 public interface StudentService {
 
+    List<Student> findAll();
+
     IPage<Student> findAll(Page<Student> page);
 
     Student findById(Integer studentId);
 
     int deleteById(Integer studentId);
 
+    Student findByNumber(String number);
+
+    int deleteByNumber(String number);
+
     int update(Student student);
 
     int updatePwd(Student student);
+
     int add(Student student);
 }
