@@ -11,14 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public interface LoginMapper {
 
-    @Select("select adminId,adminName,sex,tel,email,cardId,role from admin where adminId = #{username} and pwd = #{password}")
+    @Select("select * from admin where adminId = #{username} and pwd = #{password}")
     Admin adminLogin(String username, String password);
 
-    @Select("select teacherId,teacherName,institute,sex,tel,email,cardId," +
-            "type,role from teacher where teacherId = #{username} and pwd = #{password}")
+    @Select("select * from teacher where teacherId = #{username} and pwd = #{password}")
     Teacher teacherLogin(String username, String password);
 
-    @Select("select studentId,studentName,grade,major,clazz,institute,tel," +
-            "email,cardId,sex,role from student where studentNumber = #{username} and pwd = #{password}")
+    @Select("select * from student where studentNumber = #{username} and pwd = #{password}")
     Student studentLogin(String username, String password);
 }
