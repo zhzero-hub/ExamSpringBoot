@@ -44,7 +44,7 @@ public interface StudentMapper {
      * @param student 传递一个对象
      * @return 受影响的记录条数
      */
-    @Update("update student set studentNumber = #{studentNumber} studentName = #{studentName},grade = #{grade},major = #{major},clazz = #{clazz}," +
+    @Update("update student set studentNumber = #{studentNumber},studentName = #{studentName},grade = #{grade},major = #{major},clazz = #{clazz}," +
             "institute = #{institute},tel = #{tel},email = #{email},pwd = #{pwd},cardId = #{cardId},sex = #{sex},role = #{role} " +
             "where studentNumber = #{studentNumber}")
     int update(Student student);
